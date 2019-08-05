@@ -98,16 +98,16 @@ var promise1 = new Promise(function(resolve, reject) {
                 zip: 084444
             }
         }
-        console.log(data.name,"address:");
-        resolve(data.address);
+        //console.log(data.name, "address:");
+        resolve(data);
     } else {
         var res = new Error('failed......');
         reject(res);
     }
 });
 
-var promise2 = function(address) {
-    var msg = address.state + ' ' + address.zip;
+var promise2 = function(data1,address) {
+    var msg = data1.name + ' address: '+ data1.address.state + ' ' + data1.address.zip;
     return Promise.resolve(msg);
 }
 
